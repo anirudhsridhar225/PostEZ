@@ -9,9 +9,6 @@ const imbue = localFont({
   display: 'swap'
 });
 
-interface CustomCursorProps {
-  containerRef: React.RefObject<HTMLDivElement | null>;
-}
 
 const ServiceSection = ({ title }: any) => {
   return (
@@ -32,7 +29,7 @@ export default function Pagethree() {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-screen min-w-screen flex flex-col items-center justify-center cursor-default"
+      className="relative min-h-screen min-w-screen flex flex-col items-center justify-center cursor-none"
     >
       <CustomCursor containerRef={containerRef} />
       <ServiceSection title={<>INFLUENCER<br />MARKETING</>} />
