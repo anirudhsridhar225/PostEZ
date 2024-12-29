@@ -37,3 +37,14 @@ export default function Home() {
     </div>
   );
 }
+
+{/*
+  display name
+  link to instagram profile
+  describe themselves as word traits max 3 words
+  expected sm goals
+  ideal audience
+  feed aesthetic
+  looks vs content tradeoff
+  ideal account
+*/}
