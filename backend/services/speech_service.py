@@ -2,24 +2,30 @@ import os
 import base64
 import requests
 from dotenv import load_dotenv
-from openai import OpenAI
 import openai
 
+# Load environment variables
 load_dotenv()
-
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
 client = openai.OpenAI()
 
 async def transcribe_audio_service(file_path: str) -> str:
+    # Get API key from the environment variable
     api_key = os.getenv('GOOGLE_API_KEY')
+
     if not api_key:
         raise ValueError("API key not found. Please set the GOOGLE_API_KEY in the .env file.")
 
+    print(f"Using API key: {api_key}")
+
+    # API endpoint for Google Speech-to-Text
     url = f"https://speech.googleapis.com/v1/speech:recognize?key={api_key}"
 
     with open(file_path, "rb") as audio_file:
         audio_content = base64.b64encode(audio_file.read()).decode("utf-8")
 
+    # Configure the request payload
     payload = {
         "config": {
             "encoding": "MP3",
@@ -52,6 +58,6 @@ def generate_image(prompt, output_file="generated_image.png"):
         with open(output_file, 'wb') as file:
             file.write(image_data)
 
-        print(f"Image saved as {output_file}")
+        return f"Image saved as {output_file}"
     except Exception as e:
-        print(f"An error occurred: {e}")
+        raise Exception(f"An error occurred: {e}")
