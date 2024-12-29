@@ -110,14 +110,6 @@ export default function Pagetwo() {
                     </p>
                 </div>
             </div>
-            <div className="absolute bottom-0 w-full flex justify-center">
-                <p className="text-center w-3/5 text-xl text-[#FAFAFA]/[0.4] tracking-tighter">
-                    Ditch the keyboard and let your voice do the work. Our intelligent system crafts high-quality content from your
-                    voice messages, saving you time and effort. Ditch the keyboard and let your voice do the work.
-                    Our intelligent system crafts high-quality content from your voice messages,
-                    saving you time and effort.
-                </p>
-            </div>
         </div>
     );
 }
