@@ -1,12 +1,15 @@
 import requests
+
 import nest_asyncio
 import json
 #from llama_index.llms.gemini import Gemini
+import json
 from dotenv import load_dotenv
 import os
 import base64
 from openai import OpenAI
 import openai
+
 from llama_index.core import Document
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core import VectorStoreIndex
@@ -17,10 +20,14 @@ from bs4 import BeautifulSoup
 from googlesearch import search
 
 
+
+# Load environment variables
+
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI()
+
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel("gemini-1.5-flash")
 nest_asyncio.apply()
@@ -160,6 +167,12 @@ def create_index(full_text:list):
     print(nodes)
     index = VectorStoreIndex(nodes)
 def transcribe_audio_with_api_key(local_audio_path):
+
+
+
+def transcribe_audio_with_api_key(local_audio_path):
+    # Get API key from the environment variable
+
     api_key = os.getenv('GOOGLE_API_KEY')
 
     if not api_key:
@@ -222,6 +235,11 @@ def generate_image(prompt, output_file="generated_image.png"):
 
 
 if __name__ == "__main__":
+
+# Example usage
+if __name__ == "__main__":
+    # Path to your audio file (adjust this path)
+
     audio_path = "/home/shadowx/VSCODE/hack$day/PostEZ/scripts/An_address_by_Opposition_Leader_Anthony_Albanese (mp3cut.net).mp3"  
 
     # try:
@@ -239,3 +257,10 @@ if __name__ == "__main__":
     #     print(e)
     full_text=process_queries()
     create_index(full_text)
+
+    try:
+        prompt = "Illustrate a man demonstrating a lat pulldown"
+        generate_image(prompt)
+    except Exception as e:
+        print(e)
+
