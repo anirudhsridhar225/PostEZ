@@ -41,6 +41,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      letterSpacing: {
+        tightest: '-0.50rem'
+      },
     },
   },
   plugins: [

@@ -16,4 +16,3 @@ model User {
   traits         String[] @db.VarChar
   persona        String   @unique
 }
-
