@@ -3,57 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --cursor-color: #E55865;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	--background: #ffffff;
+	--foreground: white;
+	--cursor-color: #e55865;
 }
 
 body {
-  smooth-scrolling: true;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .justified-text {
-  text-align: justify;
-  text-justify: inter-word;
-  word-break: break-word;
-  hyphens: auto;
+	text-align: justify;
+	text-justify: inter-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 .custom-cursor {
-  pointer-events: none;
-  position: fixed;
-  z-index: 9999;
-  mix-blend-mode: difference;
+	pointer-events: none;
+	position: fixed;
+	z-index: 9999;
+	mix-blend-mode: difference;
 }
 
 .cursor-dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 8px;
-  height: 8px;
-  background-color: var(--cursor-color);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 8px;
+	height: 8px;
+	background-color: var(--cursor-color);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .cursor-circle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--cursor-color);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	border: 2px solid var(--cursor-color);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
 }

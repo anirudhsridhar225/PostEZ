@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Beth_Ellen, Inter } from "next/font/google";
 import Image from 'next/image';
@@ -36,7 +34,7 @@ export default function Pagetwo() {
     };
 
     return (
-        <div className="min-h-screen relative bg-[#0A0A0A] flex flex-col items-center justify-center my-12">
+        <div className="min-h-screen relative bg-[#0A0A0A] flex flex-col items-center justify-center">
             {/* Parallax Gallery */}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
