@@ -1,11 +1,23 @@
-"use client";
+'use client'
 import { MultiStepForm } from "@/components/QuestionForm";
 import { Beth_Ellen } from "next/font/google";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const beth_ellen = Beth_Ellen({ weight: "400", subsets: ['latin'] });
 
 export default function Home() {
+    const [hydrated, setHydrated] = useState(false);
+
+    useEffect(() => {
+        // this forces a rerender
+        setHydrated(true)
+    }, [])
+
+    if (!hydrated) {
+        // this returns null on first render, so the client and server match
+        return null
+    }
     return (
         <div className="bg-[#171717] min-h-screen min-w-screen pl-40">
             {/* <HamburgerNav /> */}

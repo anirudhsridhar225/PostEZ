@@ -1,13 +1,25 @@
-"use client";
+'use client'
 import Header from "@/components/Header";
 import Pagethree from "@/components/Pagethree";
 import Pagetwo from "@/components/Pagetwo";
 import { Beth_Ellen } from "next/font/google";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const beth_ellen = Beth_Ellen({ weight: "400", subsets: ['latin'] });
 
 export default function Home() {
+    const [hydrated, setHydrated] = useState(false);
+
+    useEffect(() => {
+        // this forces a rerender
+        setHydrated(true)
+    }, [])
+
+    if (!hydrated) {
+        // this returns null on first render, so the client and server match
+        return null
+    }
     return (
         <div>
             <div className="min-h-screen min-w-screen bg-[#0A0A0A] bg-grid-white/[0.07] relative flex flex-col items-center">
@@ -21,7 +33,7 @@ export default function Home() {
                         Ditch the keyboard and let your voice do the work. Our intelligent system crafts high-quality content from your voice messages, saving you time and effort.
                     </p>
                     <Link href="/onboarding">
-                        <button className="bg-white py-3 px-4 rounded-lg z-10 text-black font-normal tracking-tighter hover:scale-110 transition-all duration-100">Try for free</button>
+                        <div className="bg-white py-3 px-4 rounded-lg z-10 text-black font-normal tracking-tighter hover:scale-110 transition-all duration-100 cursor-pointer">Try for free</div>
                     </Link>
                 </div>
             </div>
