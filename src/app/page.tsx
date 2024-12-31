@@ -1,8 +1,10 @@
 'use client'
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Pagethree from "@/components/Pagethree";
 import Pagetwo from "@/components/Pagetwo";
 import { Beth_Ellen } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -35,6 +37,13 @@ export default function Home() {
                     <Link href="/onboarding">
                         <div className="bg-white py-3 px-4 rounded-lg z-10 text-black font-normal tracking-tighter hover:scale-110 transition-all duration-100 cursor-pointer">Try for free</div>
                     </Link>
+                    <Image
+                        src="/dil.svg"
+                        alt="dil"
+                        height={100}
+                        width={100}
+                        className="absolute z-10 -translate-x-32 translate-y-8"
+                    />
                 </div>
             </div>
             <Pagetwo />
@@ -47,6 +56,7 @@ export default function Home() {
                 </p>
             </div>
             <Pagethree />
+            <Footer />
         </div>
     );
 }
